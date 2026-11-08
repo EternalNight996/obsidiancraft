@@ -305,7 +305,7 @@ impl GraphState {
             });
         }
 
-        // Wheel zoom: Obsidian scales by 1.5 per 120 px of wheel delta.
+        // Wheel zoom: the original scales by 1.5 per 120 px of wheel delta.
         if resp.hovered() && !pointer_over_controls {
             let scroll = ui.input(|i| i.smooth_scroll_delta.y);
             if scroll.abs() > 0.01 {

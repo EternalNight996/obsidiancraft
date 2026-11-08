@@ -1324,7 +1324,7 @@ fn main() -> eframe::Result {
         .with_decorations(native)
         .with_transparent(true)
         .with_maximized(maximized)
-        .with_title("Obsidian");
+        .with_title("ObsidianCraft");
     if screenshot.is_some() {
         viewport = viewport
             .with_inner_size([800.0, 600.0])
@@ -1336,7 +1336,7 @@ fn main() -> eframe::Result {
     };
     let shot = screenshot.clone();
     eframe::run_native(
-        "Obsidian",
+        "obsidiancraft",
         options,
         Box::new(move |cc| Ok(Box::new(App::new(cc, vault_path.clone(), shot.clone())))),
     )
@@ -1455,8 +1455,8 @@ mod tests {
     /// call SetWindowTextW when something differs.
     #[test]
     fn title_is_only_set_when_its_utf16_units_change() {
-        assert!(!window_title_changed("欢迎 - 仓库 - Obsidian", "欢迎 - 仓库 - Obsidian"));
-        assert!(window_title_changed("欢迎 - 仓库 - Obsidian", "创建链接 - 仓库 - Obsidian"));
+        assert!(!window_title_changed("欢迎 - 仓库 - ObsidianCraft", "欢迎 - 仓库 - ObsidianCraft"));
+        assert!(window_title_changed("欢迎 - 仓库 - ObsidianCraft", "创建链接 - 仓库 - Obsidian"));
         assert!(window_title_changed("a", "a "));
         assert!(window_title_changed("", "a"));
     }
