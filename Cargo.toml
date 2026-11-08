@@ -1,0 +1,16 @@
+[package]
+name = "obsidiancraft"
+version = "0.1.0"
+license = "MIT"
+description = "ObsidianCraft: a note-taking app with links, a graph and a local vault, built with Craft Anything"
+edition = "2021"
+
+[dependencies]
+eframe = { version = "0.37", default-features = false, features = ["default_fonts", "glow"] }
+egui = "0.37"
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 2
