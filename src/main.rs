@@ -1226,7 +1226,7 @@ fn seed_vault(dir: &Path) {
     if has_notes(dir) {
         return;
     }
-    let welcome = "这是你的新*仓库*。\n\n写点笔记，[[创建链接]]，或者试一试[导入器](obsidian://show-plugin?id=obsidian-importer)插件!\n\n当你准备好了，就将该笔记文件删除，使这个仓库为你所用。\n";
+    let welcome = "这是你的新*仓库*。\n\n写点笔记，[[创建链接]]，或者试一试[[创建链接]]!\n\n当你准备好了，就将该笔记文件删除，使这个仓库为你所用。\n";
     let _ = std::fs::write(dir.join("欢迎.md"), welcome);
     let _ = std::fs::write(dir.join("创建链接.md"), "");
 }
